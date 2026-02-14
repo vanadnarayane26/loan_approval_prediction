@@ -1,0 +1,13 @@
+data:
+  test_size: 0.2
+  random_state: 42
+
+model:
+  C: 1.0
+  max_iter: 1000
+
+artifacts:
+  model_path: "artifacts/logistic_regression_model.joblib"
+
+inference:
+  threshold: 0.9

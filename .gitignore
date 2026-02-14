@@ -1,0 +1,19 @@
+.venv/
+main.py
+inference.py
+requirements.txt
+/src/data/raw/
+# Packaging artifacts
+*.egg-info/
+build/
+dist/
+
+# Model artifacts
+artifacts/
+
+# Python cache
+__pycache__/
+*.pyc
+
+sample.json
+src\loan_approval\predict_cli.py
