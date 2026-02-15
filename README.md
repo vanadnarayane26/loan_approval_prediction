@@ -3,7 +3,7 @@ ML package and CLI files for the Loan Approval use case
 
 A modular, installable, config-driven machine learning pipeline to train and predict loan approval decisions using Logistic Regression.
 
-Built with proper src/ layout, CLI interface, YAML configuration, and clean separation of concerns.
+Built with proper ```src/``` layout, CLI interface, YAML configuration, and clean separation of concerns.
 
 # 🚀 Features
 
@@ -48,6 +48,7 @@ Step 3: Install the package in editable mode using:
 pip install -e .
 ```
 Runtime behaviour controlled by config.yaml file in the root directory
+
 Data Source: https://www.kaggle.com/datasets/altruistdelhite04/loan-prediction-problem-dataset?select=train_u6lujuX_CVtuZ9i.csv
 
 ## Training
@@ -58,6 +59,7 @@ loan-train --data <relative path to train datset> --config config.yaml
 Outputs:
 1. Logs for model performance
 2. Saved train model at artifacts/logistic_regression_model.joblib
+3. Classification report as json
 
 ## Inference
 
