@@ -4,17 +4,18 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "loan-approval"
-version = "0.1.0"   
+version = "0.2.0"   
 description = "A machine learning model to predict loan approval based on applicant data."
 authors = [
-    { name = "VVN" }
+    { name = "Vanad" }
 ]
 dependencies = [
     "pandas",
     "scikit-learn",
     "joblib",
     "numpy",
-    "pyyaml"
+    "pyyaml", 
+    "json"
 ]
 
 requires-python = ">=3.9"
