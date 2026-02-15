@@ -1,4 +1,5 @@
 import json
+import os
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
@@ -47,9 +48,12 @@ def train(data_path: str, config_path: str):
     report_dict = classification_report(y_test, y_pred, output_dict = True)
     logger.info("Classification report created successfully.....")
     
-    with open(config.artifacts["report_path"], "w") as f:
+    report_path = config.artifacts["report_path"]
+    os.makedirs(os.path.dirname(report_path), exist_ok=True)
+    
+    with open(report_path, "w") as f:
         json.dump(report_dict, f, indent = 4)
-    logger.info(f"Classification report saved successfully at {config.artifacts['report_path']}")
+    logger.info(f"Classification report saved successfully at {report_path}")
     
     logger.info("Saving the model.....")
     save_model(model, config.artifacts["model_path"])
