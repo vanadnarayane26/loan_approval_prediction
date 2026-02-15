@@ -18,7 +18,7 @@ Built with proper src/ layout, CLI interface, YAML configuration, and clean sepa
 
 
 # Project Structure
-
+```
 loan-approval-prediction/
 │
 ├── pyproject.toml
@@ -33,7 +33,7 @@ loan-approval-prediction/
 │       ├── features/
 │       ├── models/
 │       └── utils/
-
+```
 
 # Installation
 
