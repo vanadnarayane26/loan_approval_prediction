@@ -8,6 +8,7 @@ model:
 
 artifacts:
   model_path: "artifacts/logistic_regression_model.joblib"
+  report_path: "artifacts/classification_report.json"
 
 inference:
   threshold: 0.9

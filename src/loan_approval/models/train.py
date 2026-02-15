@@ -1,3 +1,4 @@
+import json
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
@@ -42,8 +43,14 @@ def train(data_path: str, config_path: str):
     
     logger.info("Evaluating the data....")
     logger.info(f"Accuracy: {accuracy_score(y_test, y_pred)}")
+    logger.info("Creating a classification report.....")
+    report_dict = classification_report(y_test, y_pred, output_dict = True)
+    logger.info("Classification report created successfully.....")
     
-    logger.info(f"Classification Report: \n{classification_report(y_test, y_pred)}")
+    with open(config.artifacts["report_path"], "w") as f:
+        json.dump(report_dict, f, indent = 4)
+    logger.info(f"Classification report saved successfully at {config.artifacts['report_path']}")
+    
     logger.info("Saving the model.....")
     save_model(model, config.artifacts["model_path"])
     logger.info(f"Model saved successfully at {config.artifacts['model_path']}")
